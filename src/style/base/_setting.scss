@@ -1,0 +1,84 @@
+@charset 'utf-8';
+// ============================================================
+//  _setting.scss
+//    - Font Style
+//    - Breakpoint
+// ============================================================
+
+$dir: '_template';
+
+// Font Family
+// ============================================================
+// @font-face {
+//   font-family: "hiramin";
+//   font-style: normal;
+//   font-weight: 400;
+//   src: local("HiraMinPro-W3"), local("HiraMinProN-W3");
+// }
+// @font-face {
+//   font-family: "hiramin";
+//   font-style: bold;
+//   font-weight: 700;
+//   src: local("HiraMinPro-W6"), local("HiraMinProN-W6");
+// }
+
+// @font-face {
+//   font-family: 'hirakaku';
+//   font-style: normal;
+//   font-weight: 400;
+//   src: local('HiraKakuPro-W3'), local('HiraKakuProN-W3');
+// }
+// @font-face {
+//   font-family: 'hirakaku';
+//   font-style: bold;
+//   font-weight: 700;
+//   src: local('HiraKakuPro-W6'), local('HiraKakuProN-W6');
+// }
+
+// @font-face {
+//   font-family: "Noto Sans JP";
+//   font-style: normal;
+//   font-weight: 400;
+//   src: local("Noto Sans CJK JP Regular"),
+//     url(//fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Regular.woff2)
+//       format("woff2"),
+//     url(//fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Regular.woff)
+//       format("woff"),
+//     url(//fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Regular.otf)
+//       format("opentype");
+// }
+
+// @font-face {
+//   font-family: "Noto Sans JP";
+//   font-style: bold;
+//   font-weight: 700;
+//   src: local("Noto Sans CJK JP bold"),
+//     url(//fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Bold.woff2)
+//       format("woff2"),
+//     url(//fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Bold.woff)
+//       format("woff"),
+//     url(//fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Bold.otf)
+//       format("opentype");
+// }
+
+// $font_family_mincho: YaKuHanJP, hiramin, Meiryo, "メイリオ", sans-serif;
+// $font_family_gothic: YaKuHanJP, hirakaku, Meiryo, "メイリオ", sans-serif;
+// $font_family_marugothic: YaKuHanJP, arial, "ヒラギノ丸ゴ Pro W4",
+//   "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", hirakaku, Meiryo, "メイリオ",
+//   sans-serif;
+// $font_family_notosans: YaKuHanJP, "Noto Sans JP", Helvetica, sans-serif;
+
+// Breakpoint
+// ============================================================
+$breakpoints: (
+  xxs: 400,
+  xs: 460,
+  sm: 576,
+  md: 768,
+  lg: 970,
+  1020: 1020,
+  xl: 1120,
+  1200: 1200,
+  xxl: 1400,
+  xxxl: 1680,
+) !default;

@@ -1,0 +1,104 @@
+@charset 'utf-8';
+// ============================================================
+//  _mixin.scss
+// ============================================================
+
+
+// Breakpoint
+// ============================================================
+@mixin breakpoint-min($breakpoint: #{map-get($breakpoints, md) - .02}) {
+  $pixel: $breakpoint;
+  @if map-has-key($breakpoints, $breakpoint) {
+    $pixel: map-get($breakpoints, $breakpoint) - .02;
+  }
+  @media only screen and (max-width: $pixel + 'px') {
+    @content;
+  }
+}
+
+@mixin breakpoint-max($breakpoint: #{map-get($breakpoints, md)}) {
+  $pixel: $breakpoint;
+  @if map-has-key($breakpoints, $breakpoint) {
+    $pixel: map-get($breakpoints, $breakpoint);
+  }
+  @media only screen and (min-width: $pixel + 'px') {
+    @content;
+  }
+}
+
+// Aspect Ratio
+// ============================================================
+@mixin aspect-ratio($width, $height) {
+  padding-top: ($height / $width) * 100%;
+}
+
+
+// Smoothing
+// フォントのレンダリングを調整（アンチエイリアスの効果を変更する）
+// @param {string} $value（falseにすると通常の状態に戻せる）
+// ============================================================
+@mixin smoothing($status: '') {
+  @if $status == 'false' {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  } @else {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+
+// Text Ellipsis
+// 1行の要素の末尾に三点リーダ（…）を追加する
+// ============================================================
+@mixin text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+// Text Line Clamp
+// 複数行の要素の末尾に三点リーダ（…）を追加する(Chrome, Safariのみ対応)
+// ============================================================
+@mixin text-line-clamp($line: 2) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  overflow: hidden;
+}
+
+
+// Text Hide
+// タグ内にあるテキストを非表示にする（枠外に移動させる）
+// ============================================================
+@mixin text-hide {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+// Placeholder Text Color
+// プレースホルダーの文字色を変更
+// @param {string} $color（文字色）
+// ============================================================
+@mixin placeholderColor($color) {
+  &:placeholder-shown {
+    color: $color;
+  }
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+  &:-moz-placeholder {
+    color: $color;
+    opacity: 1;
+  }
+  &::-moz-placeholder {
+    color: $color;
+    opacity: 1;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+}
